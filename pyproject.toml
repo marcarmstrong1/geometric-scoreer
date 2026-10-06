@@ -1,0 +1,52 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name        = "geoscore"
+version     = "0.1.0"
+description = "Geometric answer scoring for language models — no training required"
+readme      = "README.md"
+license     = { text = "MIT" }
+requires-python = ">=3.9"
+
+keywords = [
+    "nlp", "language-models", "hallucination-detection",
+    "answer-selection", "geometric-scoring",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0",
+    "transformers>=4.40",
+    "numpy>=1.24",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+examples = [
+    "datasets>=2.18",
+    "scikit-learn>=1.3",
+]
+dev = [
+    "pytest>=7.0",
+    "black",
+    "ruff",
+]
+
+[project.urls]
+Homepage   = "https://github.com/YOUR_USERNAME/geoscore"
+Paper      = "https://arxiv.org/abs/XXXX.XXXXX"
+BugTracker = "https://github.com/YOUR_USERNAME/geoscore/issues"
+
+[tool.setuptools.packages.find]
+include = ["geoscore*"]
+
+[tool.ruff]
+line-length = 88
+select      = ["E", "F", "I"]
